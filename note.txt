@@ -1,0 +1,29 @@
+********เริ่มสร้างProject  ใช้เป็น
+npm create vite@latest
+
+********install package.json
+npm install
+
+*********install tailwind UI
+https://tailwindcss.com/docs/guides/vite
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+ใส่ แทน ค่าเดิม
+ content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+ลบ index.css ใน src
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*********install daisy UI
+https://daisyui.com/docs/install/
+npm i -D daisyui@latest
+เพิ่ม ใน tailwind.config.js
+  plugins: [
+    require('daisyui'),
+  ],

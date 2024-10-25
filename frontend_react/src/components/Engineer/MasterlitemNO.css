@@ -1,0 +1,22 @@
+th {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  th::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+  }
+  
+  th.asc::after {
+    border-bottom: 5px solid black;
+  }
+  
+  th.desc::after {
+    border-top: 5px solid black;
+  }
+  

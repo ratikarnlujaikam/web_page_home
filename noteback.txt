@@ -1,0 +1,56 @@
+1
+npm init -y
+
+2
+แก้ package.json
+อันเก่า แก้ main
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+อันใหม่ แก้ main
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+3.สร้าง server.js
+ใน Folder server
+
+4.install package-lock.json
+npm i express
+
+5. เพิ่ม package.json 
+    "start":"node server",
+    "dev":"nodemon server"
+ใน scripts
+ตัวอย่าง
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server",
+    "dev":"nodemon server"
+  },
+
+  6.install cors
+  npm i cors
+
+
+
+npm install sequelize
+npm install tedious

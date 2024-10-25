@@ -1,0 +1,18 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .heading {
+    color: #4CAF50;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .table {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  

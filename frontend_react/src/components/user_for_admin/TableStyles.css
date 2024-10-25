@@ -1,0 +1,47 @@
+.table-container {
+    width: 100%; /* Ensure the container spans the full width of the viewport */
+    height: 800px; /* Set a fixed height for the table container */
+    overflow: auto; /* Allow scrolling if content overflows */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0; /* Remove padding */
+}
+
+table {
+    min-width: 800px; /* Set a minimum width for the table to ensure it doesn't shrink too much */
+    width: auto; /* Allow the table to expand based on its content */
+    border-collapse: collapse;
+    border: 1px solid #444; /* Darker border color for a dark theme */
+    background-color: #333; /* Dark background for the table */
+}
+
+thead {
+    background-color: #222; /* Darker background for the table header */
+    position: -webkit-sticky; /* For Safari compatibility */
+    position: sticky;
+    top: 0; /* Stick the header to the top of the container */
+    z-index: 1; /* Ensure the header stays above other rows */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444; /* Darker border for rows */
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a2a; /* Slightly lighter dark color for even rows */
+}
+
+th {
+    background-color: #111; /* Even darker background for table headers */
+    color: #f0f0f0; /* Light text color for readability */
+    font-weight: bold;
+}
+
+td {
+    color: #f0f0f0; /* Light text color for better contrast */
+}
+
+table, th, td {
+    border: 1px solid #444; /* Darker border for table and cells */
+}
