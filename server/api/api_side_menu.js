@@ -72,33 +72,39 @@ router.get("/Engineer", async (req, res) => {
     console.log("Received request at /Engineer"); // Log เมื่อมีการเรียกใช้งาน endpoint นี้
 
     let api_Engineer = await user.sequelize.query(`
-        SELECT [path], [name],[Details],[icon]
+        SELECT [path], [name],[Details],[icon],type
         FROM [Web_I4].[dbo].[Side_manu_web]
-        WHERE [Division] = 'Engineer'
-      `);
+        WHERE [Division] = 'Engineer'`);
 
 
     let api_PCMC = await user.sequelize.query(`
-      SELECT [path], [name],[Details],[icon]
+      SELECT [path], [name],[Details],[icon],type
       FROM [Web_I4].[dbo].[Side_manu_web]
-      WHERE [Division] = 'PCMC'
-    `);
+      WHERE [Division] = 'PCMC'`);
 
 
 
-  let api_Quality = await user.sequelize.query(`
-    SELECT [path], [name],[Details],[icon]
+    let api_Quality = await user.sequelize.query(`
+    SELECT [path], [name],[Details],[icon],type
     FROM [Web_I4].[dbo].[Side_manu_web]
-    WHERE [Division] = 'Quality'
-  `);
+    WHERE [Division] = 'Quality'`);
 
 
 
-let api_Production = await user.sequelize.query(`
-  SELECT [path], [name],[Details],icon
+    let api_Production = await user.sequelize.query(`
+  SELECT [path], [name],[Details],icon,type
   FROM [Web_I4].[dbo].[Side_manu_web]
-  WHERE [Division] = 'Production'
-`);
+  WHERE [Division] = 'Production'`);
+
+    let api_PEMM = await user.sequelize.query(`
+  SELECT [path], [name],[Details],icon,type
+  FROM [Web_I4].[dbo].[Side_manu_web]
+  WHERE [Division] = 'PEMM'`);
+
+    let api_Data_analysis = await user.sequelize.query(`
+  SELECT [path], [name],[Details],icon,type
+  FROM [Web_I4].[dbo].[Side_manu_web]
+  WHERE [Division] = 'Data_analysis'`);
 
 
 
@@ -107,6 +113,8 @@ let api_Production = await user.sequelize.query(`
       api_PCMC: api_PCMC[0],
       api_Quality: api_Quality[0],
       api_Production: api_Production[0],
+      api_PEMM: api_PEMM[0],
+      api_Data_analysis: api_Data_analysis[0],
       api_result: "ok",
     });
   } catch (error) {

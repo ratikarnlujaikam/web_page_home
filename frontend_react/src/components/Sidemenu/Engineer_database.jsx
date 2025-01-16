@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { server } from "../../constants";
 import { httpClient } from "../../utils/HttpClient";
 import moment from "moment";
-import { Url_eng } from "../../constants/index.jsx";
+import { Url_eng, Url_python } from "../../constants/index.jsx";
 class Engineer extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +25,7 @@ class Engineer extends Component {
   render() {
     const { data } = this.state;
     const Url_1 = `${Url_eng}`;
+    const Url_2 = `${Url_python}`;
 
     const Traceability =
       data && data.api_Engineer
@@ -82,10 +83,14 @@ class Engineer extends Component {
                   {Traceability.map((item, index) => (
                     <React.Fragment key={index}>
                       <a
-                        href={
-                          item.path.startsWith("http")
-                            ? item.path
-                            : `${Url_1}${item.path}`
+                         href={
+                          item.type.startsWith("H")
+                            ? item.path                      // Case for "H"
+                            : item.type.startsWith("P")
+                            ? `${Url_2}${item.path}`          // Case for "P"
+                            : item.type.startsWith("R")
+                            ? `${Url_1}${item.path}`          // Case for "R"
+                            : ''                              // Default case (if none match)
                         }
                         className="flex items-center mb-2 text-blue-600 hover:text-blue-800"
                       >
@@ -112,25 +117,29 @@ class Engineer extends Component {
                 </div>
                 <div className="card-body p-4">
                   {Monitoring.map((item, index) => (
-                              <React.Fragment key={index}>
-                              <a
-                                href={
-                                  item.path.startsWith("http")
-                                    ? item.path
-                                    : `${Url_1}${item.path}`
-                                }
-                                className="flex items-center mb-2 text-blue-600 hover:text-blue-800"
-                              >
-                                {item.name}
-                                {item.icon && (
-                                  <img
-                                    src={`${Url_1}${item.icon}`}
-                                    alt={item.name}
-                                    className="ml-2 w-8 h-8"
-                                  />
-                                )}
-                              </a>
-                            </React.Fragment>
+                    <React.Fragment key={index}>
+                      <a
+                        href={
+                          item.type.startsWith("H")
+                            ? item.path                      // Case for "H"
+                            : item.type.startsWith("P")
+                            ? `${Url_2}${item.path}`          // Case for "P"
+                            : item.type.startsWith("R")
+                            ? `${Url_1}${item.path}`          // Case for "R"
+                            : ''                              // Default case (if none match)
+                        }
+                        className="flex items-center mb-2 text-blue-600 hover:text-blue-800"
+                      >
+                        {item.name}
+                        {item.icon && (
+                          <img
+                            src={`${Url_1}${item.icon}`}
+                            alt={item.name}
+                            className="ml-2 w-8 h-8"
+                          />
+                        )}
+                      </a>
+                    </React.Fragment>
                   ))}
                 </div>
               </div>
@@ -144,25 +153,29 @@ class Engineer extends Component {
                 </div>
                 <div className="card-body p-4">
                   {Report.map((item, index) => (
-                       <React.Fragment key={index}>
-                       <a
-                         href={
-                           item.path.startsWith("http")
-                             ? item.path
-                             : `${Url_1}${item.path}`
-                         }
-                         className="flex items-center mb-2 text-blue-600 hover:text-blue-800"
-                       >
-                         {item.name}
-                         {item.icon && (
-                           <img
-                             src={`${Url_1}${item.icon}`}
-                             alt={item.name}
-                             className="ml-2 w-8 h-8"
-                           />
-                         )}
-                       </a>
-                     </React.Fragment>
+                    <React.Fragment key={index}>
+                      <a
+                          href={
+                            item.type.startsWith("H")
+                              ? item.path                      // Case for "H"
+                              : item.type.startsWith("P")
+                              ? `${Url_2}${item.path}`          // Case for "P"
+                              : item.type.startsWith("R")
+                              ? `${Url_1}${item.path}`          // Case for "R"
+                              : ''                              // Default case (if none match)
+                          }
+                        className="flex items-center mb-2 text-blue-600 hover:text-blue-800"
+                      >
+                        {item.name}
+                        {item.icon && (
+                          <img
+                            src={`${Url_1}${item.icon}`}
+                            alt={item.name}
+                            className="ml-2 w-8 h-8"
+                          />
+                        )}
+                      </a>
+                    </React.Fragment>
                   ))}
                 </div>
               </div>
@@ -176,25 +189,29 @@ class Engineer extends Component {
                 </div>
                 <div className="card-body p-4">
                   {Analysis_requester.map((item, index) => (
-                       <React.Fragment key={index}>
-                       <a
-                         href={
-                           item.path.startsWith("http")
-                             ? item.path
-                             : `${Url_1}${item.path}`
-                         }
-                         className="flex items-center mb-2 text-blue-600 hover:text-blue-800"
-                       >
-                         {item.name}
-                         {item.icon && (
-                           <img
-                             src={`${Url_1}${item.icon}`}
-                             alt={item.name}
-                             className="ml-2 w-8 h-8"
-                           />
-                         )}
-                       </a>
-                     </React.Fragment>
+                    <React.Fragment key={index}>
+                      <a
+                           href={
+                            item.type.startsWith("H")
+                              ? item.path                      // Case for "H"
+                              : item.type.startsWith("P")
+                              ? `${Url_2}${item.path}`          // Case for "P"
+                              : item.type.startsWith("R")
+                              ? `${Url_1}${item.path}`          // Case for "R"
+                              : ''                              // Default case (if none match)
+                          }
+                        className="flex items-center mb-2 text-blue-600 hover:text-blue-800"
+                      >
+                        {item.name}
+                        {item.icon && (
+                          <img
+                            src={`${Url_1}${item.icon}`}
+                            alt={item.name}
+                            className="ml-2 w-8 h-8"
+                          />
+                        )}
+                      </a>
+                    </React.Fragment>
                   ))}
                 </div>
               </div>

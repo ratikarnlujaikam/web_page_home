@@ -41,12 +41,13 @@ export const UPLOAD_PHOTO_FAIL_MESSAGE =
 
 
 export const apiUrl = "http://localhost:2030/"; //localhost port 2010
-export const Url_eng = "http://192.168.101.120:2032/"; //Port frontend
+export const Url_python = "http://192.168.101.120:2028/"; //Port frontend
+export const Url_HOME = "http://localhost:5173/"; //Port frontend
+export const Url_eng = "http://192.168.101.67:3000/"; //Port frontend
 export const Url_Qulity = "http://192.168.101.67:3000/"; //Port frontend
+export const Url_Production = "http://192.168.101.67:3000/"; //Port frontend
+export const Url_PCMC = "http://192.168.101.67:3000/"; //Port frontend
 
-
-// export const apiUrl = "http://192.168.101.120:2030/"; //localhost port 2010
-// export const Url = "http://192.168.101.120:2032/"; //Port frontend
 
 export const YES = "YES";
 export const NO = "NO";
@@ -64,6 +65,7 @@ export const server = {
   MASTER_URL: `api/MasterItemNO/Master`,
 
   ENG_URL: `api/side_menu/Engineer`,
+  PRODUCTION_URL: `api/side_menu/Engineer`,
   User_URL: `api/user_for_admin/User`,
   User_delete_URL: `api/user_for_admin/User_delete`,
   User_login_URL: `api/user_for_admin/login`,
